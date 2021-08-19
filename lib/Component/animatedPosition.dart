@@ -8,7 +8,6 @@ class LAnimatedPositioned extends StatefulWidget {
 
 class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
   bool _first = true;
-
   double _left = 0;
   double _top = 0;
   double _right = 0;
