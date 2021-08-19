@@ -11,12 +11,14 @@ class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
   double _left = 0;
   double _top = 0;
   double _right = 0;
-  double _bottom = 10;
+  double _bottom = 0;
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
+    // bool isScreenWide = MediaQuery.of(context).size.width >= kMinWidthOfLargeScreen;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -48,9 +50,13 @@ class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
                         children: [
                           Align(
                             alignment: Alignment.center,
-                            child: Row(
+                            child: Flex(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              direction:
+                                  _first ? Axis.vertical : Axis.horizontal,
+                              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
                                 CircleAvatar(
                                   minRadius: 26.0,
                                 ),
@@ -68,8 +74,7 @@ class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
                             child: IconButton(
                                 onPressed: () {
                                   setState(() {
-                                    _bottom = _first ? 20 : 240;
-
+                                    _bottom = _first ? 240 : 20;
                                     _first = !_first;
                                   });
                                 },
