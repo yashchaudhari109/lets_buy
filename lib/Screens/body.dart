@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lets_buy/Component/animatedPosition.dart';
 import 'package:lets_buy/Component/card.dart';
+import 'package:lets_buy/Component/myarc.dart';
 import 'package:lets_buy/constant.dart';
 
 class Body extends StatefulWidget {
@@ -26,7 +27,7 @@ class _BodyState extends State<Body> {
           Column(
             children: [
               SizedBox(
-                height: height * 0.20,
+                height: height * 0.18,
               ),
               CustomizedCard(),
               CustomizedCard(),

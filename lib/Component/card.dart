@@ -15,8 +15,7 @@ class _CustomizedCard extends State<CustomizedCard> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
+    return Center(
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15.0),

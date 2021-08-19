@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lets_buy/Component/myarc.dart';
 import 'package:lets_buy/constant.dart';
 
 class LAnimatedPositioned extends StatefulWidget {
@@ -36,6 +37,9 @@ class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
                   children: [
                     Container(
                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(80.0),
+                            bottomRight: Radius.circular(80.0)),
                         gradient: new LinearGradient(
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
