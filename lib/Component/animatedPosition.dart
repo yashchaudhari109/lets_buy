@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lets_buy/Component/myarc.dart';
 import 'package:lets_buy/constant.dart';
 
 class LAnimatedPositioned extends StatefulWidget {
