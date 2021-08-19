@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lets_buy/Component/cardBottom.dart';
 import 'package:lets_buy/Component/customizedtext.dart';
+import 'package:lets_buy/constant.dart';
 
 class CustomizedCard extends StatefulWidget {
   const CustomizedCard({Key? key}) : super(key: key);
@@ -29,6 +30,17 @@ class _CustomizedCard extends State<CustomizedCard> {
               flex: 7,
               child: Stack(
                 children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15.0),
+                          topRight: Radius.circular(15.0)),
+                      image: DecorationImage(
+                        image: AssetImage("assets/quote.jpg"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(

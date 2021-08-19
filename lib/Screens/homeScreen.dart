@@ -21,7 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Kappbarcolor,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(),
+          child: CircleAvatar(
+            backgroundImage: AssetImage(Kimage),
+          ),
         ),
         title: CustomizedText(
           text: "Jantu",
