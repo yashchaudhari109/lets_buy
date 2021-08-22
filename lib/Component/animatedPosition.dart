@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lets_buy/Component/appbarContainer.dart';
+import 'package:lets_buy/Component/customizedCircle.dart';
 import 'package:lets_buy/constant.dart';
 
 class LAnimatedPositioned extends StatefulWidget {
@@ -20,7 +22,7 @@ class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
 
     // bool isScreenWide = MediaQuery.of(context).size.width >= kMinWidthOfLargeScreen;
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
           height: height * 0.45,
@@ -49,36 +51,61 @@ class _LAnimatedPositionedState extends State<LAnimatedPositioned> {
                       child: Stack(
                         children: [
                           Align(
-                            alignment: Alignment.center,
+                            alignment:
+                                _first ? Alignment.topCenter : Alignment.center,
                             child: Flex(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: _first
+                                  ? MainAxisAlignment.start
+                                  : MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
+                              // mainAxisSize: MainAxisSize.max,
                               direction:
                                   _first ? Axis.vertical : Axis.horizontal,
                               // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
-                                CircleAvatar(
-                                  minRadius: 26.0,
+                                CustomizedCircle(
+                                  text: "jantu",
+                                  icon: Icons.sailing_outlined,
                                 ),
-                                CircleAvatar(
-                                  minRadius: 26.0,
+                                CustomizedCircle(
+                                  text: "Distance",
+                                  icon: Icons.add_location_alt_rounded,
                                 ),
-                                CircleAvatar(
-                                  minRadius: 26.0,
+                                CustomizedCircle(
+                                  text: "Litres",
+                                  icon: Icons.timeline,
                                 ),
                               ],
                             ),
                           ),
                           Align(
                             alignment: Alignment.bottomCenter,
-                            child: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _bottom = _first ? 240 : 20;
-                                    _first = !_first;
-                                  });
-                                },
-                                icon: Icon(Icons.expand_more)),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                _first
+                                    ? Container(
+                                        width: 70,
+                                        child: AppbarContainer(
+                                          onTap: () {
+                                            print("Search button get pressed");
+                                          },
+                                          text: "Search",
+                                          color: Colors.blueAccent,
+                                        ),
+                                      )
+                                    : Text("Choose your favourite"),
+                                IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        _bottom = _first ? 200 : 20;
+                                        _first = !_first;
+                                      });
+                                    },
+                                    icon: Icon(Icons.expand_more)),
+                              ],
+                            ),
                           ),
                         ],
                       ),

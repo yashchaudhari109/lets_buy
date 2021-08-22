@@ -26,7 +26,7 @@ class _BodyState extends State<Body> {
           Column(
             children: [
               SizedBox(
-                height: height * 0.18,
+                height: height * 0.22,
               ),
               CustomizedCard(),
               CustomizedCard(),
