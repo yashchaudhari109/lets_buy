@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lets_buy/Component/appbarContainer.dart';
 import 'package:lets_buy/Component/customizedtext.dart';
+import 'package:lets_buy/constant.dart';
 
 class CardBottom extends StatefulWidget {
   const CardBottom({Key? key}) : super(key: key);
@@ -48,6 +49,8 @@ class _CardBottomState extends State<CardBottom> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
                         color: Colors.yellow,
+                        image: DecorationImage(
+                            image: AssetImage(Kimage), fit: BoxFit.fill),
                       ),
                       height: 35.0,
                       width: 35.0,
